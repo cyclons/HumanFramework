@@ -18,17 +18,17 @@ public class TestEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             LocalSignalContainer.AddListener<SignalA>(GetSignalA);
             LocalSignalContainer.AddListener<SignalB>(GetSignalB);
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             LocalSignalContainer.RemoveListener<SignalA>(GetSignalA);
             LocalSignalContainer.RemoveListener<SignalB>(GetSignalB);
             
-            //error
+            //error 
             //LocalSignalContainer.RemoveListener<SignalC>(GetSignalC);
         }
         if (Input.GetKeyDown(KeyCode.A))

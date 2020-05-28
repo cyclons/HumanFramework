@@ -11,15 +11,12 @@ public class IOCTest : MonoBehaviour
     private ISignalContainer localsignalContainer;
 
     public GameObject PoolPrefab;
-
-    private void Awake()
-    {
-        G_InjectionContainer.RegisterInstance<ISignalContainer>(new SignalContainer(),"local");
-    }
     
     void Start()
     {
+        //使用全局IoC容器对脚本进行注入
         G_InjectionContainer.Inject(this);
+        //给消息容器添加事件订阅
         localsignalContainer.AddListener<SignalA>(OnReceiveSignalA);
     }
 
@@ -33,7 +30,11 @@ public class IOCTest : MonoBehaviour
         {
             Pool.Clear();
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            localsignalContainer.AddListener<SignalA>(OnReceiveSignalA);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             localsignalContainer.RemoveListener<SignalA>(OnReceiveSignalA);
         }
