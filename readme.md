@@ -8,15 +8,15 @@ HumanFramework是一个以人体神经系统启发的一个以消息中心与IoC
 
 ### 消息中心
 
-![](.\DocImg\SignalContainer.png)
+![](./DocImg/SignalContainer.png)
 
 ### IoC注入
 
-![IoC](.\DocImg\IoC.png)
+![IoC](./DocImg/IoC.png)
 
 ### 对象池
 
-![ObjPool](.\DocImg\ObjPool.png)
+![ObjPool](./DocImg/ObjPool.png)
 
 ## 代码规范
 
