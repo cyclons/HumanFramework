@@ -9,7 +9,7 @@ namespace HumanFramework
 {
     public class G_InjectionContainer
     {
-        private static IInjectionContainer Container = new InjectionContainer();
+        private static IInjectionContainer mContainer = new InjectionContainer();
 
         /// <summary>
         /// 为对象注入
@@ -17,7 +17,7 @@ namespace HumanFramework
         /// <param name="obj">被注入的对象</param>
         public static void Inject(object obj)
         {
-            Container.Inject(obj);
+            mContainer.Inject(obj);
         }
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace HumanFramework
         /// <param name="nameID">实例ID</param>
         public static void RegisterInstance<T>(T instance, string nameID = null)
         {
-            Container.RegisterInstance<T>(instance, nameID);
+            mContainer.RegisterInstance<T>(instance, nameID);
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace HumanFramework
         /// <param name="nameID">实例ID</param>
         public static void UnRegisterInstance<T>(string nameID = null)
         {
-            Container.UnRegisterInstance<T>(nameID);
+            mContainer.UnRegisterInstance<T>(nameID);
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace HumanFramework
         /// <param name="args">构造函数参数</param>
         public static void RegisterConstruction<TBase, TChild>(string nameID = null, params object[] args) where TChild : TBase
         {
-            Container.RegisterConstruction<TBase, TChild>(nameID, args);
+            mContainer.RegisterConstruction<TBase, TChild>(nameID, args);
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace HumanFramework
         /// <returns></returns>
         public static T ResolveInstance<T>(string nameID = null)
         {
-            return Container.ResolveInstance<T>(nameID);
+            return mContainer.ResolveInstance<T>(nameID);
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace HumanFramework
         /// <returns></returns>
         public static TBase ResolveConstruction<TBase>(string nameID = null)
         {
-            return Container.ResolveInstance<TBase>(nameID);
+            return mContainer.ResolveInstance<TBase>(nameID);
         }
 
     }

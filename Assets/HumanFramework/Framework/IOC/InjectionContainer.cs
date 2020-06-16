@@ -59,22 +59,18 @@ namespace HumanFramework.IOC
 
     public class InjectionContainer : IInjectionContainer
     {
-
-        private TypeInstanceCollection _typeInstanceDict;
-
+        private TypeInstanceCollection mTypeInstanceDict;
         public TypeInstanceCollection TypeInstanceDict
         {
             get
             {
-                return _typeInstanceDict ?? (_typeInstanceDict = new TypeInstanceCollection());
+                return mTypeInstanceDict ?? (mTypeInstanceDict = new TypeInstanceCollection());
             }
-            set => _typeInstanceDict = value;
+            set => mTypeInstanceDict = value;
         }
 
-        private TypeConstructionCollection _typeConstructionDict;
-
-        public TypeConstructionCollection TypeConstructionDict { get => _typeConstructionDict ?? (_typeConstructionDict = new TypeConstructionCollection()); set => _typeConstructionDict = value; }
-
+        private TypeConstructionCollection mTypeConstructionDict;
+        public TypeConstructionCollection TypeConstructionDict { get => mTypeConstructionDict ?? (mTypeConstructionDict = new TypeConstructionCollection()); set => mTypeConstructionDict = value; }
 
         public void Inject(object obj)
         {

@@ -23,7 +23,7 @@ namespace HumanFramework.ObjectPool
             if (poolObj == null) { return false; }
             var poolScript = poolObj.GetComponent<IPoolable>();
             if (poolScript == null) { return false; }
-            if (!poolScript.IsActive) { return false; }
+            if (!poolScript.Active) { return false; }
             PoolObjs.Push(poolObj);
             poolScript.OnRecycle();
             return true;

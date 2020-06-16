@@ -9,21 +9,21 @@ namespace HumanFramework.Event
     public class Dispatcher<T> : IDispatcher<T> where T : ISignal
     {
 
-        private Action<T> SubscribedMethods = obj => { };
+        private Action<T> mSubscribedMethods = obj => { };
 
         public void AddListener(Action<T> method)
         {
-            SubscribedMethods += method;
+            mSubscribedMethods += method;
         }
 
         public void RemoveListener(Action<T> method)
         {
-            SubscribedMethods -= method;
+            mSubscribedMethods -= method;
         }
 
         public void DispathchSignal(T signal)
         {
-            SubscribedMethods.Invoke(signal);
+            mSubscribedMethods.Invoke(signal);
         }
 
     }

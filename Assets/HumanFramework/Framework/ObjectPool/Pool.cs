@@ -10,26 +10,26 @@ namespace HumanFramework
 {
     public class Pool
     {
-        private static IObjectPoolManager PoolManager = new ObjectPoolManager();
+        private static IObjectPoolManager mPoolManager = new ObjectPoolManager();
 
         public static GameObject Spawn(GameObject prefab)
         {
-            return PoolManager.Spawn(prefab);
+            return mPoolManager.Spawn(prefab);
         }
 
         public static bool Recycle(GameObject poolObj)
         {
-            return PoolManager.Recycle(poolObj);
+            return mPoolManager.Recycle(poolObj);
         }
 
         public static bool Recycle(BasePoolObj poolObj)
         {
-            return PoolManager.Recycle(poolObj);
+            return mPoolManager.Recycle(poolObj);
         }
 
         public static void Clear()
         {
-            PoolManager.Clear();
+            mPoolManager.Clear();
         }
 
     }

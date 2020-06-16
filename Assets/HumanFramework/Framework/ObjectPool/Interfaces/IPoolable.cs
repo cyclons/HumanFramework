@@ -7,7 +7,7 @@ namespace HumanFramework.ObjectPool
     {
         Func<GameObject, bool> RecycleToPool { get; set; }
 
-        bool IsActive { get; set; }
+        bool Active { get; set; }
 
         void OnSpawn();
 

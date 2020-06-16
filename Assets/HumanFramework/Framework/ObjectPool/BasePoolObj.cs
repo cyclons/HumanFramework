@@ -10,17 +10,17 @@ namespace HumanFramework.ObjectPool
     public class BasePoolObj : MonoBehaviour, IPoolable
     {
         public Func<GameObject,bool> RecycleToPool { get ; set ; }
-        public bool IsActive { get ; set ; }
+        public bool Active { get ; set ; }
 
         public virtual void OnSpawn()
         {
-            IsActive = true;
+            Active = true;
             gameObject.SetActive(true);
         }
 
         public virtual void OnRecycle()
         {
-            IsActive = false;
+            Active = false;
             gameObject.SetActive(false);
         }
 

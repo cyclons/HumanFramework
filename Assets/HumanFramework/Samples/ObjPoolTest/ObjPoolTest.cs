@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using HumanFramework;
 
-public class Test : MonoBehaviour
+public class ObjPoolTest : MonoBehaviour
 {
     public GameObject TestPrefab;
     // Start is called before the first frame update
@@ -14,7 +14,7 @@ public class Test : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             Pool.Spawn(TestPrefab);
         }
